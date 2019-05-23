@@ -11,23 +11,22 @@ PowerShell 6.2+: https://github.com/PowerShell/PowerShell
 1. we change the propertyGroup in Api.Csproj
 	- we replace the propertygroup with:
 	(FDD):
-	```xml
-	<PropertyGroup>
+```xml
+<PropertyGroup>
   <TargetFramework>netcoreapp2.2</TargetFramework>
   <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
   <SelfContained>false</SelfContained>
   <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
 </PropertyGroup>
-	```
+```
 	(SCD)
-	```xml
-
+```xml
 <PropertyGroup>    
     <TargetFramework>netcoreapp2.2</TargetFramework>    
     <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>    
 </PropertyGroup>
-	```
+```
 	// it is possible to not include the RID (runtime inditifiers)
 
 2. we add the package: Microsoft.AspNetCore.Hosting.WindowsServices
