@@ -1,3 +1,5 @@
+# From Asp.netCore.Docs GitHub 
+# https://github.com/aspnet/AspNetCore.Docs/blob/master/aspnetcore/host-and-deploy/windows-service/scripts/2.x/RegisterService.ps1
 #Requires -Version 6.2
 #Requires -RunAsAdministrator
 
