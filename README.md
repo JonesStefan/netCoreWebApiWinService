@@ -16,7 +16,7 @@ PowerShell 6.2+: https://github.com/PowerShell/PowerShell
 ```xml
 <PropertyGroup>
   <TargetFramework>netcoreapp2.2</TargetFramework>
-  <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+  <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
   <SelfContained>false</SelfContained>
   <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
 </PropertyGroup>
