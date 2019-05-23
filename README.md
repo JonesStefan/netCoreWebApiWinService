@@ -1,4 +1,5 @@
 netCoreWebApiWinService
+
 below is taken from the MS docs: https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/windows-service?view=aspnetcore-2.2
 
 // note that we use SCD in the project:
