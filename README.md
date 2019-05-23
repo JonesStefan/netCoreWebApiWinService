@@ -9,17 +9,24 @@ PowerShell 6.2+: https://github.com/PowerShell/PowerShell
 0. started a new webApi Project with the net core framework.
 0.1 build the sulotion and skip to the step [#Publish The App]
 1. we change the propertyGroup in Api.Csproj
-	- we add:
+	- we replace the propertygroup with:
 	(FDD):
 	```xml
-	<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+	<PropertyGroup>
+  <TargetFramework>netcoreapp2.2</TargetFramework>
+  <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
   <SelfContained>false</SelfContained>
   <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+</PropertyGroup>
 	```
 	(SCD)
 	```xml
-	<RuntimeIdentifier>win10x64</RuntimeIdentifier>
-	<IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+
+<PropertyGroup>    
+    <TargetFramework>netcoreapp2.2</TargetFramework>    
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>    
+</PropertyGroup>
 	```
 	// it is possible to not include the RID (runtime inditifiers)
 
@@ -95,11 +102,11 @@ in the example from MS we use a folder (c:/svc) to publish the app in
 	- in cmdPromt navigate to the project folder.
 	- publish the app with cmd:
 	-- FDD
-	```code
+	```
 	dotnet publish --configuration Release --output c:\svc
 	```
 	-- SCD
-	```code
+	```
 	dotnet publish --configuration Release --runtime win10-x64 --output c:\svc
 	```
 This builds the project to the folder and is now ready to be used
@@ -107,17 +114,17 @@ This builds the project to the folder and is now ready to be used
 # Creating a user account (powershell)
 -Create User
 Open powerShell 6.2
-run cmd: New-LocalUser -Name ApiServiceUser
+run cmd: ```New-LocalUser -Name ApiServiceUser```
 and provide a strong password
 
 - Grant user access to publish folder
-cmd: icacls "c:\svc" /grant "ApiServiceUser:(OI)(CI)WRX" /t
+cmd: ```icacls "c:\svc" /grant "ApiServiceUser:(OI)(CI)WRX" /t```
 
 # Create the Service
 In /Script, we have RegisterService.ps1 Script that enables us to register the service on the machine.
 - open powershell
 - navigate to {sourceFolder}/script
-- run cmd: RegisterService.ps1
+- run cmd: ```.\RegisterService.ps1```
 	- provide the needed parameters
 		-Name {NAME}  --> (the serviceName: Api)
 		-DisplayName "{DISPLAY NAME}" 
@@ -125,7 +132,7 @@ In /Script, we have RegisterService.ps1 Script that enables us to register the s
 		-Exe "{PATH TO EXE}\\{ASSEMBLY NAME}.exe" 
 		-User {DOMAIN\USER}
 
-- run cmd: Start-Service -Name Api
+- run cmd: ```Start-Service -Name Api```
 // if we get an error make sure that the user account (ApiServiceUser) has 'logon as a service'.
 
 # check if the service is working
