@@ -10,7 +10,7 @@ PowerShell 6.2+: https://github.com/PowerShell/PowerShell
 0.1 build the sulotion and skip to the step [#Publish The App]
 1. we change the propertyGroup in Api.Csproj
 	- we replace the propertygroup with:
-	(FDD):
+##(FDD):
 ```xml
 <PropertyGroup>
   <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -19,7 +19,7 @@ PowerShell 6.2+: https://github.com/PowerShell/PowerShell
   <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
 </PropertyGroup>
 ```
-	(SCD)
+##(SCD)
 ```xml
 <PropertyGroup>    
     <TargetFramework>netcoreapp2.2</TargetFramework>    
