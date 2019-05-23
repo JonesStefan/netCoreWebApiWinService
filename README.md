@@ -1,10 +1,23 @@
-netCoreWebApiWinService
+#netCoreWebApiWinService
 
 below is taken from the MS docs: https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/windows-service?view=aspnetcore-2.2
 
-// note that we use SCD in the project:
 # Prerequisites
 PowerShell 6.2+: https://github.com/PowerShell/PowerShell
+
+# Note
+// note that we use SCD in the project
+	-- if you want to use FDD (smaller publish size, and needs the installation target to have dotnet core 2.2 installed)
+	  - set 
+```xml
+	<SelfContained>
+		false
+	</SelfContained>
+```
+
+if already published, make sure to stop the service, then delete the files in publish folder,
+rebuild and restart the service. 
+
 
 # Setup
 0. started a new webApi Project with the net core framework.

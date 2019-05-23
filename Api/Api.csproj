@@ -3,7 +3,7 @@
   <PropertyGroup>
     
       <TargetFramework>netcoreapp2.2</TargetFramework>
-    
+      <SelfContained>true</SelfContained>
       <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
       <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
     
