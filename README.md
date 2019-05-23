@@ -56,7 +56,7 @@ rebuild and restart the service.
 	
 # Code
 
-now we are ready to do the code changes in program.Main we make the requried changes to have the 
+now we are ready to do the code changes in program.Main we make the requried changes to have the Api check if it should run as a service or a console application. 
 
 ```csharp
 using System.Diagnostics;
@@ -155,7 +155,17 @@ In /Script, we have RegisterService.ps1 Script that enables us to register the s
 - run cmd: ```Start-Service -Name Api```
 // if we get an error make sure that the user account (ApiServiceUser) has 'logon as a service'.
 
-# check if the service is working
+# Check if the service is working
 open a browser on the computer and navigate to: http://localhost:5000/api/values
 
 ALL DONE - HAPPY HACKIGN!
+
+# Run the api locally (not in windows service) 
+-- make sure the service is stopped
+
+1. Debug in VS: 
+-- set the debug target to 'API' instead of IIS express and run with F5 or play btn
+
+2. Run the published exe:
+--open command promt navigate to the publish folder and run ```Api.exe --console```
+
