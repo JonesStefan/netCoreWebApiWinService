@@ -33,12 +33,12 @@ PowerShell 6.2+: https://github.com/PowerShell/PowerShell
 ```
 	// it is possible to not include the RID (runtime inditifiers)
 
-2. we add the package: Microsoft.AspNetCore.Hosting.WindowsServices
+2. we add the package: ```Microsoft.AspNetCore.Hosting.WindowsServices```
 	// recomended to use the package manager
-	- run cmd: Install-Package Microsoft.AspNetCore.Hosting.WindowsServices
+	- run cmd: ```Install-Package Microsoft.AspNetCore.Hosting.WindowsServices```
 
-	-- if we want logging we add: Microsoft.Extensions.Logging.EventLog
-		cmd: Install-Package Microsoft.Extensions.Logging.EventLog
+	-- if we want logging we add: ```Microsoft.Extensions.Logging.EventLog```
+		cmd: ```Install-Package Microsoft.Extensions.Logging.EventLog```
 	
 # Code
 
@@ -104,14 +104,17 @@ in the example from MS we use a folder (c:/svc) to publish the app in
 	- create a folder for the
 	- in cmdPromt navigate to the project folder.
 	- publish the app with cmd:
-	-- FDD
-	```
-	dotnet publish --configuration Release --output c:\svc
-	```
-	-- SCD
-	```
-	dotnet publish --configuration Release --runtime win10-x64 --output c:\svc
-	```
+	
+-- FDD
+
+```
+dotnet publish --configuration Release --output c:\svc
+```
+-- SCD
+
+```
+dotnet publish --configuration Release --runtime win10-x64 --output c:\svc
+```
 This builds the project to the folder and is now ready to be used
 
 # Creating a user account (powershell)
